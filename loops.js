@@ -19,8 +19,14 @@ function whileLoop(n) {
     return "done";
 }
 
-function doWhileLoop(n) {
-    do {
-    console.log("I run once regardless.");
-  } while (incrementVariable() < 5);
+function doWhileLoop(array) {
+    function maybeTrue() {
+    return Math.random() >= 0.5
+  }
+
+  do {
+    array.pop();
+  } while (array.length > -1 && maybeTrue());
+    return array;
+
 }
